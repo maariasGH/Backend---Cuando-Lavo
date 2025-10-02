@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar Lavado</title>
+</head>
+<body>
+    <h1>Agregar Lavado</h1>
+    <form action="/lavados" method="post">
+        <input type="number" name="id_casa" placeholder="ID de la casa" required>
+        <input type="number" name="id_usuario" placeholder="ID del usuario" required>
+        <input type="date" name="fecha" required>
+        <select name="turno" required>
+            <option value="mediodia">Mediodía</option>
+            <option value="noche">Noche</option>
+        </select>
+        <input type="text" name="detalles" placeholder="Detalles del lavado">
+        <button type="submit">Agregar Lavado</button>
+    </form>
+</body>
+</html>

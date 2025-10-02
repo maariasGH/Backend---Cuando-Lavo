@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lavados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Lavados</h1>
+    {% if lavados %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Lavado ID</th>
+                    <th>Usuario</th>
+                    <th>Casa</th>
+                    <th>Fecha</th>
+                    <th>Turno</th>
+                    <th>Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lavado in lavados %}
+                <tr>
+                    <td>{{ lavado.id }}</td>
+                    <td>{{ lavado.usuario }}</td>
+                    <td>{{ lavado.casa }}</td>
+                    <td>{{ lavado.fecha }}</td>
+                    <td>{{ lavado.turno }}</td>
+                    <td>{{ lavado.detalles }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No hay lavados registrados.</p>
+    {% endif %}
+</body>
+</html>
